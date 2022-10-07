@@ -1,0 +1,13 @@
+[package]
+name = "stf-runner"
+version = "0.1.0"
+edition = "2021"
+authors = ["DEADBLACKCLOVER <deadblackclover@protonmail.com>"]
+description = "An example of a simple test framework in Rust"
+license = "GPL-3.0"
+readme = "README.md"
+homepage = "https://github.com/deadblackclover/simple-test-framework"
+repository = "https://github.com/deadblackclover/simple-test-framework"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]

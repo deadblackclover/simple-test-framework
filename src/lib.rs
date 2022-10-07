@@ -1,15 +1,42 @@
-#![feature(custom_test_frameworks)]
-#![test_runner(crate::test_frameworks::test_runner)]
+use colored::*;
+use std::time::Instant;
 
-#[cfg(test)]
-pub mod test_frameworks;
-
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+pub trait Testable {
+    fn run(&self) -> ();
 }
 
-#[test_case]
-fn it_works() {
-    let result = add(2, 2);
-    assert_eq!(result, 4);
+impl<T> Testable for T
+where
+    T: Fn(),
+{
+    fn run(&self) {
+        print!("{}...\t", core::any::type_name::<T>());
+        self();
+        println!("{}", "[ok]".green());
+    }
 }
+
+// #[cfg(test)]
+pub fn test_runner(tests: &[&dyn Testable]) {
+    println!("Running {} tests\n", tests.len());
+
+    let start = Instant::now();
+
+    for test in tests {
+        test.run();
+    }
+
+    let duration = start.elapsed();
+
+    println!(
+        "\nTime elapsed in tests is: {}",
+        format!("{:?}", duration).cyan()
+    );
+}
+
+// #[cfg(test)]
+// #[panic_handler]
+// pub fn test_panic(info: &PanicInfo) -> () {
+//     println!("[failed]\n");
+//     println!("Error: {}\n", info);
+// }

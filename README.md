@@ -1,4 +1,5 @@
 # simple-test-framework
+
 An example of a simple test framework in Rust
 
 ## Usage
@@ -19,3 +20,9 @@ fn it_works() {
     assert_eq!(result, 4);
 }
 ```
+
+## Sub-projects
+
+- [stf-macro](https://github.com/deadblackclover/simple-test-framework/tree/master/stf-macro) ![crates.io](https://img.shields.io/crates/v/stf-macro.svg)
+
+- [stf-runner](https://github.com/deadblackclover/simple-test-framework/tree/master/stf-runner) ![crates.io](https://img.shields.io/crates/v/stf-runner.svg)

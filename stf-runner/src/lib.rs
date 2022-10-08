@@ -1,4 +1,7 @@
-use std::time::Instant;
+#![no_std]
+
+use libc_print::std_name::{print, println};
+use time::Instant;
 
 const RED: &str = "\u{001b}[31m";
 const GREEN: &str = "\u{001b}[32m";

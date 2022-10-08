@@ -11,3 +11,5 @@ repository = "https://github.com/deadblackclover/simple-test-framework"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
+libc-print = "0.1.20"
+time = "0.3.15"

@@ -1,2 +1,2 @@
 [workspace]
-members = ["stf-runner", "stf-macro"]
+members = ["example", "stf-runner", "stf-macro"]
